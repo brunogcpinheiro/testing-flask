@@ -5,15 +5,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello, Flask"
+    headline = "Hello!"
+    return render_template("bind.html", headline=headline)
 
 
-@app.route("/<string:name>")
-def greeting(name):
-    name = name.capitalize()
-    return f"Hello, {name}!"
-
-
-@app.route("/template")
-def template():
-    return render_template("index.html")
+@app.route("/bye")
+def bye():
+    headline = "Goodbye!"
+    return render_template("bind.html", headline=headline)
