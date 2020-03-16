@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -12,3 +12,8 @@ def index():
 def greeting(name):
     name = name.capitalize()
     return f"Hello, {name}!"
+
+
+@app.route("/template")
+def template():
+    return render_template("index.html")
