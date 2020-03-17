@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forms</title>
-    <style>
-      input {
-        display: block;
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <form action="{{url_for('created_user')}}" method="POST">
-      <input
-        type="text"
-        placeholder="type your first name..."
-        name="first_name"
-      />
-      <input
-        type="text"
-        placeholder="type your last name..."
-        name="last_name"
-      />
-      <input type="number" placeholder="type your age..." name="age" />
-      <button type="submit">Enviar</button>
-    </form>
-  </body>
-</html>
+{% extends 'layout.html' %} {% block style %}
+<style>
+  input {
+    display: block;
+    margin: 20px 0;
+  }
+</style>
+{% endblock style %} {% block heading %} Form Page {% endblock heading %} {%
+block body %}
+<form action="{{url_for('created_user')}}" method="POST">
+  <input type="text" placeholder="type your first name..." name="first_name" />
+  <input type="text" placeholder="type your last name..." name="last_name" />
+  <input type="number" placeholder="type your age..." name="age" />
+  <button type="submit">Enviar</button>
+</form>
+{% endblock body %}

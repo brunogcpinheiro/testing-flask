@@ -1,45 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Created User</title>
-    <style>
-      body {
-        text-align: center;
-      }
+{% extends 'layout.html' %} {% block style %}
+<style>
+  body {
+    text-align: center;
+  }
 
-      table {
-        border-collapse: collapse;
-        width: 50%;
-        text-align: center;
-        margin: 0 auto;
-      }
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-      th,
-      td {
-        padding: 10px;
-        border: 1px solid black;
-      }
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid black;
+  }
 
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>The new user is:</h1>
-    <table>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Age</th>
-      </tr>
-      <tr>
-        <td>{{first_name}}</td>
-        <td>{{last_name}}</td>
-        <td>{{age}}</td>
-      </tr>
-    </table>
-  </body>
-</html>
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>
+{% endblock style %} {% block heading %} Created User Page {% endblock heading
+%} {% block body %}
+<h1>The new user is:</h1>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>{{first_name}}</td>
+    <td>{{last_name}}</td>
+    <td>{{age}}</td>
+  </tr>
+</table>
+
+{% endblock body %}
